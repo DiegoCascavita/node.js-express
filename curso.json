@@ -1,0 +1,9 @@
+{
+    "titulo": "Aula 01 - Node.js",
+    "numVistas": 123,
+    "temas": [
+        "Javascript",
+        "React"
+    ],
+    "publico": true
+}
