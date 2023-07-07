@@ -3,16 +3,20 @@ const app = express()
 
 const {infoCursos} = require('./cursos.js')
 
+//router
+const routerProgramacion = express.Router()
+app.use('/api/cursos/programacion')//base para las rutas de url
+
 //routing
 app.get('/', (req, res) => {
-    res.send('mi primer server en node🙂')
+    res.send('mi server en node🙂')
 })
 //otra ruta
 app.get('/api/cursos', (req, res) => {
     res.send(JSON.stringify(infoCursos))
 })
-//otra ruta
-app.get('/api/cursos/programacion', (req, res) => {
+//otra ruta USANDO ROUTER POR DEFAULT
+routerProgramacion.get('/', (req, res) => {
     res.send(JSON.stringify(infoCursos.programacion))
 })
 //url parameters
@@ -25,11 +29,10 @@ app.get('/api/cursos/programacion/:lenguaje',(req, res) => {
         .send(`no se encontro cursos de ${lenguaje}`)
     }
     //parametro query
-
     if(req.query.ordenr === "vistas"){
-        return res.send(JSON.stringify(resultados.sort((a,b) => a.vistas - b.vistas)))
+        return res.send(JSON.stringify(resultados.sort((a,b) => b.vistas - a.vistas)))
     }
-ini
+
     res.send(JSON.stringify(resultados))
 })
 // console.log(infoCursos)
