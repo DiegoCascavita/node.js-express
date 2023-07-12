@@ -1,3 +1,14 @@
+GET http://localhost:3000 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 5,
+    "titulo": "Node.js",
+    "lenguaje": "javascript",
+    "vistas": 3213,
+    "nivel": "intermedio"
+}
+###
 POST http://localhost:3000/api/cursos/programacion HTTP/1.1
 Content-Type: application/json
 
@@ -12,6 +23,17 @@ Content-Type: application/json
 ###
 
 PUT http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 2,
+    "titulo": "python intermedio 2",
+    "lenguaje": "python",
+    "vistas": 13213,
+    "nivel": "intermedio"
+}
+###
+PATCH http://localhost:3000/ HTTP/1.1
 Content-Type: application/json
 
 {
